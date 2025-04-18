@@ -9,26 +9,20 @@
   <style>
     .croquis-container {
       position: relative;
-      width: 100%;
+      width: 140%;
       max-width: 800px;
       margin: auto;
     }
 
     .croquis-img {
-      width: 100%;
+      width: 140%;
       display: block;
     }
 
     .hotspot-btn {
       position: absolute;
       transform: translate(-50%, -50%);
-      padding: 1px 2px;
-      font-size: 5px;
-    }
-    .Minihotspot-btn {
-      position: absolute;
-      transform: translate(-50%, -50%);
-      padding: 1px 2px;
+      padding: 1px 3px;
       font-size: 5px;
     }
     .btn-purple {
@@ -54,68 +48,69 @@
       color: white;
     }
 
-    #btn1 { bottom: 17%; left: 35%; }
-    #btn2 { bottom: 26%; left: 40%; }
-    #btn3 { bottom: 35%; left: 35%; }
-    #btn4 { bottom: 34%; left: 41%; }
-    #btn5 { bottom: 40%; left: 39.5%; }
-    #btn6 { bottom: 40%; left: 46%; }
-    #btn7 { bottom: 45%; left: 46%; }
-    #btn8 { bottom: 50%; left: 46%; }
-    #btn9 { bottom: 54%; left: 47%; }
-    #btn10 { bottom: 58%; left: 46%; }
-    #btn11 { bottom: 60%; left: 49%; }
-    #btn12 { bottom: 66%; left: 47%; }
-    #btn13 { bottom: 67%; left: 43%; }
-    #btn14 { bottom: 71%; left: 43%; }
-    #btn15 { bottom: 65%; left: 38%; }
-    #btn16 { bottom: 69%; left: 38%; }
-    #btn17 { bottom: 63%; left: 33%; }
-    #btn18 { bottom: 67%; left: 33%; }
-    #btn19 { bottom: 70%; left: 48%; }
-    #btn20 { bottom: 71%; left: 59%; }
-    #btn21 { bottom: 63%; left: 59%; }
-    #btn22 { bottom: 49%; left: 60.5%; }
-    #btn23 { bottom: 52%; left: 60.5%; }
-    #btn24 { bottom: 53%; left: 65%; }
-    #btn25 { bottom: 49%; left: 68%; }
-    #btn26 { bottom: 42%; left: 65%; }
-    #btn27 { bottom: 38%; left: 57%; }
-    #btn28 { bottom: 60%; left: 72%; }
-    #btn29 { bottom: 59%; left: 78%; }
-    #btn30 { bottom: 70%; left: 79%; }
-    #btn31 { bottom: 75%; left: 92%; }
-    #btn32 { bottom: 77%; left: 82%; }
-    #btn33 { bottom: 69%; left: 84%; }
-    #btn34 { bottom: 53%; left: 80%; }
-    #btn35 { bottom: 52%; left: 85%; }
-    #btn36 { bottom: 43%; left: 84%; }
-    #btn37 { bottom: 47.5%; left: 86%; }
-    #btn38 { bottom: 50%; left: 82%; }
-    #btn39 { bottom: 48%; left: 78%; }
-    #btn40 { bottom: 42%; left: 77%; }
-    #btn41 { bottom: 79%; left: 89%; }
-    #btn42 { bottom: 60%; left: 29%; }
-    #btn43 { bottom: 65%; left: 24%; }
-    #btn44 { bottom: 57%; left: 24%; }
-    #btn45 { bottom: 38%; left: 42%; }
-    #btn46 { bottom: 38%; left: 50%; }
-    #btn47 { bottom: 33%; left: 46%; }
-    #btn48 { bottom: 47%; left: 53%; }
-    #btn49 { bottom: 42%; left: 25%; }
-    #btn50 { bottom: 49%; left: 27%; }
-    #btn51 { bottom: 58%; left: 36%; }
-    #btn52 { bottom: 52%; left: 55%; }
-    #btn53 { bottom: 58%; left: 55%; }
-    #btn54 { bottom: 56%; left: 50%; }
-    #btn55 { bottom: 56%; left: 39%; }
-    #btn56 { bottom: 56%; left: 32%; }
-    #btn57 { bottom: 53%; left: 44%; }
-    #btn58 { bottom: 47%; left: 49%; }
-    #btn59 { bottom: 42%; left: 47%; }
-    #btn60 { bottom: 52%; left: 51%; }
-    #btn61 { bottom: 50%; left: 32%; }
-    #btn62 { bottom: 35.5%; left: 47%; }
+    #btn1 { bottom: 18%; left: 50%; }
+    #btn2 { bottom: 28%; left: 55%; }
+    #btn3 { bottom: 37%; left: 51%; }
+    #btn4 { bottom: 36%; left: 57%; }
+    #btn5 { bottom: 41%; left: 55.5%; }
+    #btn6 { bottom: 42%; left: 64.5%; }
+    #btn7 { bottom: 45%; left: 63.5%; }
+    #btn8 { bottom: 51%; left: 64.5%; }
+    #btn9 { bottom: 56%; left: 65%; }
+    #btn10 { bottom: 63%; left: 65%; }
+    #btn11 { bottom: 61%; left: 68%; }
+    #btn12 { bottom: 68%; left: 65%; }
+    #btn13 { bottom: 67%; left: 60%; }
+    #btn14 { bottom: 73%; left: 60%; }
+    #btn15 { bottom: 66%; left: 53%; }
+    #btn16 { bottom: 70%; left: 53%; }
+    #btn17 { bottom: 64%; left: 45.5%; }
+    #btn18 { bottom: 68%; left: 45.5%; }
+    #btn19 { bottom: 72%; left: 67%; }
+    #btn20 { bottom: 73%; left: 83%; }
+    #btn21 { bottom: 64%; left: 82%; }
+    #btn22 { bottom: 50%; left: 85%; }
+    #btn23 { bottom: 52%; left: 85%; }
+    #btn24 { bottom: 49.5%; left: 89.5%; }
+    #btn25 { bottom: 50%; left: 94%; }
+    #btn26 { bottom: 45%; left: 91%; }
+    #btn27 { bottom: 40%; left: 80%; }
+    #btn28 { bottom: 59%; left: 100%; }
+    #btn29 { bottom: 59%; left: 110%; }
+    #btn30 { bottom: 70%; left: 113%; }
+    #btn31 { bottom: 77%; left: 128%; }
+    #btn32 { bottom: 79%; left: 113%; }
+    #btn33 { bottom: 71%; left: 117%; }
+    #btn34 { bottom: 54%; left: 115%; }
+    #btn35 { bottom: 53%; left: 120%; }
+    #btn36 { bottom: 44%; left: 118%; }
+    #btn37 { bottom: 48%; left: 118%; }
+    #btn38 { bottom: 51%; left: 113%; }
+    #btn39 { bottom: 50%; left: 107%; }
+    #btn40 { bottom: 43%; left: 107.5%; }
+    #btn41 { bottom: 80%; left: 123%; }
+    #btn42 { bottom: 60.5%; left: 39%; }
+    #btn43 { bottom: 67%; left: 30.5%; }
+    #btn44 { bottom: 59%; left: 30.5%; }
+    #btn45 { bottom: 39%; left: 58.5%; }
+    #btn46 { bottom: 40%; left: 68%; }
+    #btn47 { bottom: 33%; left: 65%; }
+    #btn48 { bottom: 47.5%; left: 74.5%; }
+    #btn49 { bottom: 43%; left: 35%; }
+    #btn50 { bottom: 50%; left: 38%; }
+    #btn51 { bottom: 59%; left: 50%; }
+    #btn52 { bottom: 53%; left: 76%; }
+    #btn53 { bottom: 59%; left: 75%; }
+    #btn54 { bottom: 57%; left: 70%; }
+    #btn55 { bottom: 58%; left: 55%; }
+    #btn56 { bottom: 58%; left: 45%; }
+    #btn57 { bottom: 54%; left: 61%; }
+    #btn58 { bottom: 48%; left: 68.5%; }
+    #btn59 { bottom: 43%; left: 69%; }
+    #btn60 { bottom: 53%; left: 71%; }
+    #btn61 { bottom: 52%; left: 45%; }
+    #btn62 { bottom: 37%; left: 66%; }
+
   </style>
 </head>
 <body class="bg-dark">
@@ -154,7 +149,7 @@
       <button id="btn25" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/JardinAgri.mp4">Explanada Agri</button>
       <button id="btn26" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/ModuloVentas.mp4">Modulo Ventas</button>
       <button id="btn27" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/Estacionamiento.mp4">Estacionamiento</button>
-      <button id="btn28" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/EXUBE.mp4">EXUBE</button>
+      <button id="btn28" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/EXUBE.mp4">EXUBE y Comedor</button>
       <button id="btn29" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Escudo.mp4">Escudo MVZ</button>
       <button id="btn30" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Escultura.mp4">A3 y A4</button>
       <button id="btn31" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Corral.mp4">Corrales</button>
@@ -164,7 +159,7 @@
       <button id="btn35" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/CADI.mp4">CADI</button>
       <button id="btn36" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Talleres.mp4">Taller Cultural</button>
       <button id="btn37" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/TallerEscultura.mp4">Escultura de Metal</button>
-      <button id="btn38" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Ajedrez.mp4">Zona de Ajedrez</button>
+      <button id="btn38" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Ajedrez.mp4">Ajedrez</button>
       <button id="btn39" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Estacionamiento.mp4">Estacionamiento</button>
       <button id="btn40" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Entrada.mp4">Entrada MVZ</button>
       <button id="btn41" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/EntradaCorral.mp4">Entrada Corral</button>
