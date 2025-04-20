@@ -118,8 +118,10 @@
   <div class="container py-2 text-center">
     <img src="./MapiFESC.png" class="Mapi-img" alt="MapiFESC" width="200">
     <img src="./logoFESC.png" class="LogoUNAM-img" alt="LogoFESC" width="50">
-    <p>Para una mejor experiencia, mantén el dispositivo en horizontal</p>
-    <div class="croquis-container">
+    <div id="Gira">
+      <p>Para poder visualizar el mapa, mantenga su dispositivo en horizontal</p>
+    </div>
+    <div class="croquis-container" id="croquis">
       <img src="./CroquisEscalado.jpeg" class="croquis-img" alt="Croquis">
 
       <button id="btn1" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/Torniquetes.mp4">Torniquetes</button>
@@ -211,6 +213,18 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
+    function checkOrientation() {
+      if (window.innerHeight > window.innerWidth) {
+        alert("Por favor, gire su dispositivo para verlo en orientación horizontal.");
+        document.getElementById("croquis").style.display = "none";
+        document.getElementById("Gira").style.display = "block";
+      } else {
+        document.getElementById("croquis").style.display = "block";
+        document.getElementById("Gira").style.display = "none";
+      }
+    }
+    window.addEventListener("resize", checkOrientation);
+    window.onload = checkOrientation;
     const videoModal = document.getElementById('videoModal');
     const modalVideo = document.getElementById('modalVideo');
 
