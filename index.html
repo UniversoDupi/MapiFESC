@@ -76,6 +76,10 @@
       left: 0; 
       height: 100vh;
       width: 220px;
+      height: 100vh;
+      overflow-y: auto; /* ¡permite desplazamiento vertical! */
+      overscroll-behavior: contain; /* evita efectos feos en móviles */
+      -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
       background-color: #333;
 
       transform: translateX(-100%); 
@@ -195,11 +199,10 @@
       }
 
       .croquis-container {
-        position: relative;
         width: auto;
+        max-width: 100%;
         height: auto;
-        margin: auto;
-        overflow: visible;
+        display: block;
       }
 
       .croquis-img {
