@@ -23,20 +23,6 @@
       display: block;
     }
 
-    .croquis-container {
-      position: relative;
-      width: 90%; /* Amplía el ancho al 90% del viewport */
-      height: 80vh; /* Amplía el alto al 80% del viewport */
-      max-width: 1200px; /* Permite que se extienda más el ancho */
-      margin: auto;
-      overflow: hidden; /* Evita que el contenido salga del área visible */
-    }
-
-    .croquis-img {
-      width: 100%;
-      display: block;
-    }
-
     .LogoUNAM-img:hover {
       cursor: pointer;
       transform: scale(1.05);
@@ -208,6 +194,19 @@
         display: block;
       }
 
+      .croquis-container {
+        position: relative;
+        width: auto;
+        height: auto;
+        margin: auto;
+        overflow: visible;
+      }
+
+      .croquis-img {
+        width: auto;
+        display: block;
+      }
+
       #btn1 { bottom: 25%; left: 50%; }
       #btn2 { bottom: 35%; left: 50%; }
       #btn3 { bottom: 45%; left: 50%; }
@@ -244,6 +243,20 @@
         max-width: 50px;
         min-width: 10px;
         z-index: 10;
+        display: block;
+      }
+
+      .croquis-container {
+        position: relative;
+        width: 90%;
+        height: 80vh;
+        max-width: 1200px; 
+        margin: auto;
+        overflow: hidden;
+      }
+
+      .croquis-img {
+        width: 100%;
         display: block;
       }
 
