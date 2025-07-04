@@ -44,7 +44,7 @@
           <li><a href="#depo" id="ZoomDep" onclick="Pip()">Zona Deportiva</a></li>
         </nav>
         <nav class="amarillo">
-          <li><a href="#tall" id="ZoomTal" onclick="Pip()">Zona de Talleres</a></li>
+          <li><a href="#tall" id="ZoomTal" onclick="Pip()">Talleres y Zonas de Interés</a></li>
         </nav>
         <nav class="fresita">
           <li><a href="#tall" id="ZoomHos" onclick="Pip()">Zona de Hospitales</a></li>
@@ -59,9 +59,68 @@
     <div class="croquis-container" id="croquis">
       <div id="zoomArea">
         <img src="./CroquisEscalado.jpeg" class="croquis-img" alt="Croquis">
-        <button id="btn1" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/Torniquetes.mp4">Torniquetes</button>
-        <button id="btn2" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/Letras.mp4">Letras</button>
-        <button id="btn3" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/EntradaCI.mp4">Entrada CIFESC</button>
+      <button id="btn1" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/Torniquetes.mp4">Torniquetes</button>
+      <button id="btn2" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/Letras.mp4">Letras</button>
+      <button id="btn3" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/EntradaCI.mp4">Entrada CIFESC</button>
+      <button id="btn4" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/JardinBota.mp4">Jardin Botanico</button>
+      <button id="btn5" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/CentroIdiomas.mp4">CIFESC</button>
+      <button id="btn6" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ContaAdmin/EdificiosTiendas.mp4">Cafeteria</button>
+      <button id="btn7" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ContaAdmin/EdificiosPasillo1.mp4">CoordinacionAdm</button>
+      <button id="btn8" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ContaAdmin/EdificiosPasillo2.mp4">Pasillos</button>
+      <button id="btn9" class="btn btn-orange hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/ExplanadaING.mp4">Explanada</button>
+      <button id="btn10" class="btn btn-orange hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/EdificiosA8.mp4">A8 y A9</button>
+      <button id="btn11" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/ServiciosMedicos.mp4">Servicios Medicos</button>
+      <button id="btn12" class="btn btn-orange hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/Coordinacion.mp4">CoordinacionING</button>
+      <button id="btn13" class="btn btn-orange hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/Cafeteria.mp4">Comedor IME</button>
+      <button id="btn14" class="btn btn-fresa hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/CafeteriaPt2.mp4">Canchas</button>
+      <button id="btn15" class="btn btn-orange hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/LIME.mp4">LIME 1 y 2</button>
+      <button id="btn16" class="btn btn-orange hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/LIMEPt2.mp4">Entradas LIME</button>
+      <button id="btn17" class="btn btn-orange hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/LIME2.mp4">LIME 3 y 4</button>
+      <button id="btn18" class="btn btn-orange hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/LIME2Pt2.mp4">Entradas LIME</button>
+      <button id="btn19" class="btn btn-fresa hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/Canchas.mp4">Fronton</button>
+      <button id="btn20" class="btn btn-fresa hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/Gimnasio.mp4">Gimnasio</button>
+      <button id="btn21" class="btn btn-fresa hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/GimnasioAtras.mp4">Campo</button>
+      <button id="btn22" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/A2Abajo.mp4">A2 abajo</button>
+      <button id="btn23" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/A2.mp4">A2 arriba</button>
+      <button id="btn24" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/CruceInv.mp4">A1 y L1</button>
+      <button id="btn25" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/JardinAgri.mp4">Explanada Agri</button>
+      <button id="btn26" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/ModuloVentas.mp4">Modulo Ventas</button>
+      <button id="btn27" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/Estacionamiento.mp4">Estacionamiento</button>
+      <button id="btn28" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/EXUBE.mp4">EXUBE y Comedor</button>
+      <button id="btn29" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Escudo.mp4">Escudo MVZ</button>
+      <button id="btn30" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Escultura.mp4">A3 y A4</button>
+      <button id="btn31" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Corral.mp4">Corrales</button>
+      <button id="btn32" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/MesasA4.mp4">A4 y L7</button>
+      <button id="btn33" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/L6.mp4">L6</button>
+      <button id="btn34" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/CasaBlanca.mp4">Casa Blanca</button>
+      <button id="btn35" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/CADI.mp4">CADI</button>
+      <button id="btn36" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Talleres.mp4">Taller Cultural</button>
+      <button id="btn37" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/TallerEscultura.mp4">Escultura de Metal</button>
+      <button id="btn38" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Ajedrez.mp4">Ajedrez</button>
+      <button id="btn39" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Estacionamiento.mp4">Estacionamiento</button>
+      <button id="btn40" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Entrada.mp4">Entrada MVZ</button>
+      <button id="btn41" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/EntradaCorral.mp4">Entrada Corral</button>
+      <button id="btn42" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/EntradaHospitales.mp4">Entrada Hospitales</button>
+      <button id="btn43" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/HospitalEquinos.mp4">Hospital Equinos</button>
+      <button id="btn44" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/PequenasEspecies.mp4">Pequeñas Especies</button>
+      <button id="btn45" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ContaAdmin/SalaComputoAdmi.mp4">Sala de Computo</button>
+      <button id="btn46" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/KellerEntrada.mp4">Entrada Keller</button>
+      <button id="btn47" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/KellerAtras.mp4">Monumento</button>
+      <button id="btn48" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/GobiernoDentro.mp4">Gobierno</button>
+      <button id="btn49" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/UIM.mp4">UIM</button>
+      <button id="btn50" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/Bioterio.mp4">Bioterio</button>
+      <button id="btn51" class="btn btn-info hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Informatica/CentroComputo.mp4">Centro de Computo</button>
+      <button id="btn52" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/Biblioteca.mp4">Biblioteca</button>
+      <button id="btn53" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/Servicios.mp4">Servicios Escolares</button>
+      <button id="btn54" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/Servicios2da.mp4">Orientacion</button>
+      <button id="btn55" class="btn btn-info hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Informatica/Gallineros.mp4">Gallineros</button>
+      <button id="btn56" class="btn btn-info hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Informatica/EntradaA13.mp4">Entrada A14</button>
+      <button id="btn57" class="btn btn-info hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Informatica/A11.mp4">A11 y L9</button>
+      <button id="btn58" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/Cubiculo.mp4">Cubiculos</button>
+      <button id="btn59" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/GobiernoEstaciona.mp4">Intersección</button>
+      <button id="btn60" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/Explanada.mp4">Explanada</button>
+      <button id="btn61" class="btn btn-info hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Informatica/Coordinacion.mp4">A13 y A14</button>
+      <button id="btn62" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/KellerDentro.mp4">Auditorio Keller</button>
       </div>
     </div>
 
