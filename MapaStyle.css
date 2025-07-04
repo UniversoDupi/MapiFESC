@@ -31,13 +31,33 @@
   }
 
 .btn-pink {
-    background-color: #c142ac;
+    background-color: #dd3999;
     color: white;
-    border-color: #c14290;
+    border-color: #c03385;
   }
 
 .btn-pink:hover {
-    background-color: #913773;
+    background-color: #a72a73;
+  }
+
+.btn-orange {
+    background-color: #ff7300;
+    color: white;
+    border-color: #d86100;
+  }
+
+.btn-orange:hover {
+    background-color: #c95a00;
+  }
+
+.btn-fresa {
+    background-color: #ff006a;
+    color: white;
+    border-color: #b1004a;
+  }
+
+.btn-fresa:hover {
+    background-color: #8f003c;
   }
 
 p {
@@ -141,7 +161,7 @@ p {
   }
 
 .verdecl {
-    background-image: linear-gradient(to right, #ff848e, #99001a);
+    background-image: linear-gradient(to right, #ff3288, #99001a);
   }
 .verdecl:hover{
     background-image: linear-gradient(to right, #ce0924, #2b0009);
@@ -155,10 +175,10 @@ p {
   }
 
 .fresita {
-    background-image: linear-gradient(to right, #ff006a, #7c0034);
+    background-image: linear-gradient(to right, #ff0000, #7c0000);
   }
 .fresita:hover{
-    background-image: linear-gradient(to right, #ac0048, #300014);
+    background-image: linear-gradient(to right, #ac0000, #300000);
   }
 
     /* Responsividad para orientación vertical */
@@ -166,8 +186,8 @@ p {
     .hotspot-btn {
       position: absolute;
       transform: translate(-50%, -50%);
-      padding: .25px .5px;
-      font-size: 2px;
+      padding: .15px .15px;
+      font-size: 1.5px;
     }
 
     .Mapi-img {
@@ -209,9 +229,68 @@ p {
       display: block;
     }
 
-    #btn1 { bottom: 25%; left: 50%; }
-    #btn2 { bottom: 35%; left: 50%; }
-    #btn3 { bottom: 45%; left: 50%; }
+    #btn1 { bottom: 16%; left: 35%; }
+    #btn2 { bottom: 26%; left: 40%; }
+    #btn3 { bottom: 36.5%; left: 39%; }
+    #btn4 { bottom: 34.5%; left: 41%; }
+    #btn5 { bottom: 40%; left: 40%; }
+    #btn6 { bottom: 41%; left: 47%; }
+    #btn7 { bottom: 43.5%; left: 46%; }
+    #btn8 { bottom: 50%; left: 46%; }
+    #btn9 { bottom: 55%; left: 47%; }
+    #btn10 { bottom: 63%; left: 46.5%; }
+    #btn11 { bottom: 60%; left: 49%; }
+    #btn12 { bottom: 66.5%; left: 46.5%; }
+    #btn13 { bottom: 67%; left: 43%; }
+    #btn14 { bottom: 74%; left: 42.5%; }
+    #btn15 { bottom: 65%; left: 38%; }
+    #btn16 { bottom: 70%; left: 38%; }
+    #btn17 { bottom: 63%; left: 32.5%; }
+    #btn18 { bottom: 67%; left: 32.5%; }
+    #btn19 { bottom: 71%; left: 47.7%; }
+    #btn20 { bottom: 71%; left: 59%; }
+    #btn21 { bottom: 65%; left: 59%; }
+    #btn22 { bottom: 49%; left: 60.5%; }
+    #btn23 { bottom: 51%; left: 60.5%; }
+    #btn24 { bottom: 48%; left: 64%; }
+    #btn25 { bottom: 49.5%; left: 67%; }
+    #btn26 { bottom: 43%; left: 65%; }
+    #btn27 { bottom: 40%; left: 60%; }
+    #btn28 { bottom: 59%; left: 71%; }
+    #btn29 { bottom: 59.5%; left: 78%; }
+    #btn30 { bottom: 70.5%; left: 80%; }
+    #btn31 { bottom: 78%; left: 93%; }
+    #btn32 { bottom: 79%; left: 81%; }
+    #btn33 { bottom: 72%; left: 84%; }
+    #btn34 { bottom: 52%; left: 78%; }
+    #btn35 { bottom: 52%; left: 85%; }
+    #btn36 { bottom: 44%; left: 85%; }
+    #btn37 { bottom: 48%; left: 85%; }
+    #btn38 { bottom: 51%; left: 81%; }
+    #btn39 { bottom: 49.5%; left: 77%; }
+    #btn40 { bottom: 44%; left: 77%; }
+    #btn41 { bottom: 82%; left: 88%; }
+    #btn42 { bottom: 60%; left: 27%; }
+    #btn43 { bottom: 68%; left: 22%; }
+    #btn44 { bottom: 59%; left: 22%; }
+    #btn45 { bottom: 41%; left: 43.5%; }
+    #btn46 { bottom: 38.5%; left: 49%; }
+    #btn47 { bottom: 32.5%; left: 46%; }
+    #btn48 { bottom: 47%; left: 53.5%; }
+    #btn49 { bottom: 42%; left: 25%; }
+    #btn50 { bottom: 49%; left: 27%; }
+    #btn51 { bottom: 58%; left: 36%; }
+    #btn52 { bottom: 52.5%; left: 54%; }
+    #btn53 { bottom: 58%; left: 54.5%; }
+    #btn54 { bottom: 56%; left: 50%; }
+    #btn55 { bottom: 57%; left: 40%; }
+    #btn56 { bottom: 57%; left: 32.3%; }
+    #btn57 { bottom: 53.5%; left: 44%; }
+    #btn58 { bottom: 45%; left: 49%; }
+    #btn59 { bottom: 41.5%; left: 50%; }
+    #btn60 { bottom: 52%; left: 51%; }
+    #btn61 { bottom: 50.5%; left: 32.1%; }
+    #btn62 { bottom: 36%; left: 47%; }
   }
 
   /* Responsividad para orientación horizontal */
@@ -262,7 +341,66 @@ p {
       display: block;
     }
 
-    #btn1 { bottom: 18%; left: 50%; }
-    #btn2 { bottom: 28%; left: 55%; }
-    #btn3 { bottom: 37%; left: 51%; }
+    #btn1 { bottom: 17%; left: 35%; }
+    #btn2 { bottom: 27%; left: 40%; }
+    #btn3 { bottom: 37.5%; left: 39%; }
+    #btn4 { bottom: 35.5%; left: 41%; }
+    #btn5 { bottom: 41%; left: 40%; }
+    #btn6 { bottom: 42%; left: 47%; }
+    #btn7 { bottom: 44.5%; left: 46%; }
+    #btn8 { bottom: 51%; left: 46%; }
+    #btn9 { bottom: 56%; left: 47%; }
+    #btn10 { bottom: 64%; left: 46.5%; }
+    #btn11 { bottom: 61%; left: 49%; }
+    #btn12 { bottom: 67.5%; left: 46.5%; }
+    #btn13 { bottom: 68%; left: 43%; }
+    #btn14 { bottom: 75%; left: 42.5%; }
+    #btn15 { bottom: 66%; left: 38%; }
+    #btn16 { bottom: 71%; left: 38%; }
+    #btn17 { bottom: 64%; left: 32.5%; }
+    #btn18 { bottom: 68%; left: 32.5%; }
+    #btn19 { bottom: 72%; left: 47.7%; }
+    #btn20 { bottom: 72%; left: 59%; }
+    #btn21 { bottom: 66%; left: 59%; }
+    #btn22 { bottom: 50%; left: 60.5%; }
+    #btn23 { bottom: 52%; left: 60.5%; }
+    #btn24 { bottom: 49%; left: 64%; }
+    #btn25 { bottom: 50.5%; left: 67%; }
+    #btn26 { bottom: 44%; left: 65%; }
+    #btn27 { bottom: 41%; left: 60%; }
+    #btn28 { bottom: 60%; left: 71%; }
+    #btn29 { bottom: 60.5%; left: 78%; }
+    #btn30 { bottom: 71.5%; left: 80%; }
+    #btn31 { bottom: 77%; left: 93%; }
+    #btn32 { bottom: 80%; left: 81%; }
+    #btn33 { bottom: 73%; left: 84%; }
+    #btn34 { bottom: 53%; left: 78%; }
+    #btn35 { bottom: 53%; left: 85%; }
+    #btn36 { bottom: 45%; left: 85%; }
+    #btn37 { bottom: 49%; left: 85%; }
+    #btn38 { bottom: 52%; left: 81%; }
+    #btn39 { bottom: 50.5%; left: 77%; }
+    #btn40 { bottom: 45%; left: 77%; }
+    #btn41 { bottom: 83%; left: 88%; }
+    #btn42 { bottom: 61%; left: 27%; }
+    #btn43 { bottom: 69%; left: 22%; }
+    #btn44 { bottom: 60%; left: 22%; }
+    #btn45 { bottom: 42%; left: 43.5%; }
+    #btn46 { bottom: 39.5%; left: 49%; }
+    #btn47 { bottom: 33.5%; left: 46%; }
+    #btn48 { bottom: 48%; left: 53.5%; }
+    #btn49 { bottom: 43%; left: 25%; }
+    #btn50 { bottom: 50%; left: 27%; }
+    #btn51 { bottom: 59%; left: 36%; }
+    #btn52 { bottom: 53.5%; left: 54%; }
+    #btn53 { bottom: 59%; left: 54.5%; }
+    #btn54 { bottom: 57%; left: 50%; }
+    #btn55 { bottom: 58%; left: 40%; }
+    #btn56 { bottom: 58%; left: 32.3%; }
+    #btn57 { bottom: 54.5%; left: 44%; }
+    #btn58 { bottom: 46%; left: 49%; }
+    #btn59 { bottom: 42.5%; left: 50%; }
+    #btn60 { bottom: 53%; left: 51%; }
+    #btn61 { bottom: 51.5%; left: 32.1%; }
+    #btn62 { bottom: 37%; left: 47%; }
   }
