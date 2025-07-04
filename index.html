@@ -7,41 +7,24 @@
   <link rel="icon" type="image/png" href="./icon.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.288); /* Oscurecimiento elegante */
-      z-index: 5;
-      display: none;
-    }
-    /* Aparece cuando se activa el menú */
-    .overlay.active {
-      display: block;
-    }
-
     .croquis-container {
       position: relative;
-      width: 90%;
-      height: 80vh;
-      max-width: 1200px; 
+      width: 140%;
+      max-width: 800px;
       margin: auto;
-      overflow: hidden;
     }
 
     .croquis-img {
-      width: 100%;
+      width: 140%;
       display: block;
     }
-    
-    .LogoUNAM-img:hover {
-      cursor: pointer;
-      transform: scale(1.05);
-      transition: transform 0.2s ease;
-    }
 
+    .hotspot-btn {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      padding: 1px 3px;
+      font-size: 5px;
+    }
     .btn-purple {
       background-color: #6f42c1;
       color: white;
@@ -61,254 +44,149 @@
     .btn-pink:hover {
       background-color: #913773;
     }
-
-    p {
+    p{
       color: white;
     }
 
-    .navbar {
-      background-image: linear-gradient(to right, #6b3f0c, #7a7419);
-      padding: 10px 20px;
-      position: relative;
-    }
-
-    .hamburger {
-      font-size: 30px;
-      color: white;
-      cursor: pointer;
-      z-index: 2;
-      position: relative;
-    }
-
-    .nav-links {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      position: fixed;
-      top: 0;
-      left: 0; 
-      height: 100vh;
-      maxheight: 100vh;
-      width: 220px;
-      overflow-y: auto; /* ¡permite desplazamiento vertical! */
-      overscroll-behavior: contain; /* evita efectos feos en móviles */
-      -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
-      background-color: #333;
-
-      transform: translateX(-100%); 
-      transition: transform 0.3s ease-in-out;
-
-      display: flex;
-      flex-direction: column;
-      padding-top: 60px;
-
-      z-index: 10;
-      opacity: 1;
-      pointer-events: auto;
-      box-shadow: 2px 0 6px rgba(0,0,0,0.4); 
-    }
-
-    .nav-links.show {
-      transform: translateX(0); 
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .nav-links li a {
-      display: block;
-      padding: 15px 20px;
-      color: white;
-      text-decoration: none;
-    }
-
-    .azul {
-      background-image: linear-gradient(to right, #4b6cff, #19237a);
-    }
-    .azul:hover{
-      background-image: linear-gradient(to right, #2c3f96, #0e1341);
-    }
-
-    .cyan {
-      background-image: linear-gradient(to right, #00cad8, #053b3d);
-    }
-    .cyan:hover{
-      background-image: linear-gradient(to right, #0fa59e, #002b2b);
-    }
-
-    .cafe {
-      background-image: linear-gradient(to right, #ff8827, #6d4307);
-    }
-    .cafe:hover{
-      background-image: linear-gradient(to right, #ad6500, #301f00);
-    }
-
-    .rosa {
-      background-image: linear-gradient(to right, #ff79c7, #ca009e);
-    }
-    .rosa:hover{
-      background-image: linear-gradient(to right, #880071, #3b0025);
-    }
-
-    .verde {
-      background-image: linear-gradient(to right, #69ff4b, #217a19);
-    }
-    .verde:hover{
-      background-image: linear-gradient(to right, #2c962c, #12410e);
-    }
-
-    .morado {
-      background-image: linear-gradient(to right, #cc4bff, #5e197a);
-    }
-    .morado:hover{
-      background-image: linear-gradient(to right, #7d2c96, #330e41);
-    }
-
-    .verdecl {
-      background-image: linear-gradient(to right, #ff848e, #99001a);
-    }
-    .verdecl:hover{
-      background-image: linear-gradient(to right, #ce0924, #2b0009);
-    }
-
-    .amarillo {
-      background-image: linear-gradient(to right, #d8ca00, #797100);
-    }
-    .amarillo:hover{
-      background-image: linear-gradient(to right, #b19913, #343500);
-    }
-
-    /* Responsividad para orientación vertical */
-    @media (orientation: portrait) {
-      .hotspot-btn {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        padding: .25px .5px;
-        font-size: 2px;
-      }
-
-      .Mapi-img {
-        position: absolute;
-        top: 1vh;
-        left: 29vw;
-        width: 42vw;
-        max-width: 200px;
-      }
-
-      .LogoUNAM-img {
-        position: absolute;
-        width: 11vw;
-        max-width: 45px;  
-      }
-
-      .fesc-enlace {
-        position: absolute;
-        top: 1vh;
-        left: 87vw;
-        width: 11vw;
-        max-width: 50px;
-        min-width: 10px;
-        z-index: 10;
-        display: block;
-      }
-
-      #btn1 { bottom: 25%; left: 50%; }
-      #btn2 { bottom: 35%; left: 50%; }
-      #btn3 { bottom: 45%; left: 50%; }
-    }
-
-    /* Responsividad para orientación horizontal */
-    @media (orientation: landscape) {
-      .hotspot-btn {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        padding: 1px 2px;
-        font-size: 5px;
-      }
-
-      .Mapi-img {
-        position: absolute;
-        top: 0vh;
-        left: 42vw;
-        width: 20vw;
-        max-width: 200px;
-      }
-
-      .LogoUNAM-img {
-        position: absolute;
-        width: 8vw;
-        max-width: 45px;  
-      }
-
-      .fesc-enlace {
-        position: absolute;
-        top: 0.5vh;
-        left: 93vw;
-        width: 20vw;
-        max-width: 50px;
-        min-width: 10px;
-        z-index: 10;
-        display: block;
-      }
-
-      #btn1 { bottom: 18%; left: 50%; }
-      #btn2 { bottom: 28%; left: 55%; }
-      #btn3 { bottom: 37%; left: 51%; }
-    }
+    #btn1 { bottom: 18%; left: 50%; }
+    #btn2 { bottom: 28%; left: 55%; }
+    #btn3 { bottom: 37%; left: 51%; }
+    #btn4 { bottom: 36%; left: 57%; }
+    #btn5 { bottom: 41%; left: 55.5%; }
+    #btn6 { bottom: 42%; left: 64.5%; }
+    #btn7 { bottom: 45%; left: 63.5%; }
+    #btn8 { bottom: 51%; left: 64.5%; }
+    #btn9 { bottom: 56%; left: 65%; }
+    #btn10 { bottom: 63%; left: 65%; }
+    #btn11 { bottom: 61%; left: 68%; }
+    #btn12 { bottom: 68%; left: 65%; }
+    #btn13 { bottom: 67%; left: 60%; }
+    #btn14 { bottom: 73%; left: 60%; }
+    #btn15 { bottom: 66%; left: 53%; }
+    #btn16 { bottom: 70%; left: 53%; }
+    #btn17 { bottom: 64%; left: 45.5%; }
+    #btn18 { bottom: 68%; left: 45.5%; }
+    #btn19 { bottom: 72%; left: 67%; }
+    #btn20 { bottom: 73%; left: 83%; }
+    #btn21 { bottom: 64%; left: 82%; }
+    #btn22 { bottom: 50%; left: 85%; }
+    #btn23 { bottom: 52%; left: 85%; }
+    #btn24 { bottom: 49.5%; left: 89.5%; }
+    #btn25 { bottom: 50%; left: 94%; }
+    #btn26 { bottom: 45%; left: 91%; }
+    #btn27 { bottom: 40%; left: 80%; }
+    #btn28 { bottom: 59%; left: 100%; }
+    #btn29 { bottom: 59%; left: 110%; }
+    #btn30 { bottom: 70%; left: 113%; }
+    #btn31 { bottom: 77%; left: 128%; }
+    #btn32 { bottom: 79%; left: 113%; }
+    #btn33 { bottom: 71%; left: 117%; }
+    #btn34 { bottom: 54%; left: 115%; }
+    #btn35 { bottom: 53%; left: 120%; }
+    #btn36 { bottom: 44%; left: 118%; }
+    #btn37 { bottom: 48%; left: 118%; }
+    #btn38 { bottom: 51%; left: 113%; }
+    #btn39 { bottom: 50%; left: 107%; }
+    #btn40 { bottom: 43%; left: 107.5%; }
+    #btn41 { bottom: 80%; left: 123%; }
+    #btn42 { bottom: 60.5%; left: 39%; }
+    #btn43 { bottom: 67%; left: 30.5%; }
+    #btn44 { bottom: 59%; left: 30.5%; }
+    #btn45 { bottom: 39%; left: 58.5%; }
+    #btn46 { bottom: 40%; left: 68%; }
+    #btn47 { bottom: 33%; left: 65%; }
+    #btn48 { bottom: 47.5%; left: 74.5%; }
+    #btn49 { bottom: 43%; left: 35%; }
+    #btn50 { bottom: 50%; left: 38%; }
+    #btn51 { bottom: 59%; left: 50%; }
+    #btn52 { bottom: 53%; left: 76%; }
+    #btn53 { bottom: 59%; left: 75%; }
+    #btn54 { bottom: 57%; left: 70%; }
+    #btn55 { bottom: 58%; left: 55%; }
+    #btn56 { bottom: 58%; left: 45%; }
+    #btn57 { bottom: 54%; left: 61%; }
+    #btn58 { bottom: 48%; left: 68.5%; }
+    #btn59 { bottom: 43%; left: 69%; }
+    #btn60 { bottom: 53%; left: 71%; }
+    #btn61 { bottom: 52%; left: 45%; }
+    #btn62 { bottom: 37%; left: 66%; }
 
   </style>
-  <!-- Librería Panzoom -->
-  <script src="https://unpkg.com/@panzoom/panzoom@4.6.0/dist/panzoom.min.js"></script>
 </head>
 <body class="bg-dark">
-  <nav class="navbar">
-    <img src="./MapiFESC.png" class="Mapi-img" alt="MapiFESC">
-    <a href="https://www.cuautitlan.unam.mx/" class="fesc-enlace">
-      <img src="./logoFESC.png" class="LogoUNAM-img" alt="LogoFESC">
-    </a>
-    
-    <div class="hamburger" id="hamburger">&#9776;</div>
-      <ul class="nav-links" id="navLinks">
-        <p><strong><i>Escoge la zona para ubicarla en el mapa</i></strong></p>
-        <nav class="azul">
-          <li><a href="#admcon" id="ZoomAdm">Administración y Contabilidad</a></li>
-        </nav>
-        <nav class="cyan">
-          <li><a href="#info" id="ZoomInf">Informática</a></li>
-        </nav>
-        <nav class="cafe">
-          <li><a href="#inge" id="ZoomIng">Ingenierías</a></li>
-        </nav>
-        <nav class="rosa">
-          <li><a href="#vet" id="ZoomVet">Veterinaria</a></li>
-        </nav>
-        <nav class="verde">
-          <li><a href="#agri" id="ZoomAgr">Agrícola</a></li>
-        </nav>
-        <nav class="morado">
-          <li><a href="#expl" id="ZoomExp">Explanada Principal</a></li>
-        </nav>
-        <nav class="verdecl">
-          <li><a href="#depo" id="ZoomDep">Zona Deportiva</a></li>
-        </nav>
-        <nav class="amarillo">
-          <li><a href="#tall" id="ZoomTal">Zona de Talleres</a></li>
-        </nav>        
-        <button class="close-btn" id="closeMenu">Volver</button>
-      </ul>
-  </nav>
-  <div class="overlay" id="overlay"></div>
-  
-  <div class="container py-2 text-center">
-    <button id="resetZoom">Restablecer vista</button>
-    <div class="croquis-container" id="croquis">
-      <div id="zoomArea">
-        <img src="./CroquisEscalado.jpeg" class="croquis-img" alt="Croquis">
-        <button id="btn1" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/Torniquetes.mp4">Torniquetes</button>
-        <button id="btn2" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/Letras.mp4">Letras</button>
-        <button id="btn3" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/EntradaCI.mp4">Entrada CIFESC</button>
-      </div>
-    </div>
 
+  <div class="container py-2 text-center">
+    <img src="./MapiFESC.png" class="Mapi-img" alt="MapiFESC" width="200">
+    <img src="./logoFESC.png" class="LogoUNAM-img" alt="LogoFESC" width="50">
+    <div id="Gira">
+      <p>Para poder visualizar el mapa, mantenga su dispositivo en horizontal</p>
+    </div>
+    <div class="croquis-container" id="croquis">
+      <img src="./CroquisEscalado.jpeg" class="croquis-img" alt="Croquis">
+
+      <button id="btn1" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/Torniquetes.mp4">Torniquetes</button>
+      <button id="btn2" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/Letras.mp4">Letras</button>
+      <button id="btn3" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/EntradaCI.mp4">Entrada CIFESC</button>
+      <button id="btn4" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/JardinBota.mp4">Jardin Botanico</button>
+      <button id="btn5" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/CentroIdiomas.mp4">CIFESC</button>
+      <button id="btn6" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ContaAdmin/EdificiosTiendas.mp4">Cafeteria</button>
+      <button id="btn7" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ContaAdmin/EdificiosPasillo1.mp4">CoordinacionAdm</button>
+      <button id="btn8" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ContaAdmin/EdificiosPasillo2.mp4">Pasillos</button>
+      <button id="btn9" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/ExplanadaING.mp4">Explanada</button>
+      <button id="btn10" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/EdificiosA8.mp4">A8 y A9</button>
+      <button id="btn11" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/ServiciosMedicos.mp4">Servicios Medicos</button>
+      <button id="btn12" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/Coordinacion.mp4">CoordinacionING</button>
+      <button id="btn13" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/Cafeteria.mp4">Comedor IME</button>
+      <button id="btn14" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/CafeteriaPt2.mp4">Canchas</button>
+      <button id="btn15" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/LIME.mp4">LIME 1 y 2</button>
+      <button id="btn16" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/LIMEPt2.mp4">Entradas LIME</button>
+      <button id="btn17" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/LIME2.mp4">LIME 3 y 4</button>
+      <button id="btn18" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/LIME2Pt2.mp4">Entradas LIME</button>
+      <button id="btn19" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Ingenierias/Canchas.mp4">Fronton</button>
+      <button id="btn20" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/Gimnasio.mp4">Gimnasio</button>
+      <button id="btn21" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/GimnasioAtras.mp4">Campo</button>
+      <button id="btn22" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/A2Abajo.mp4">A2 abajo</button>
+      <button id="btn23" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/A2.mp4">A2 arriba</button>
+      <button id="btn24" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/CruceInv.mp4">A1 y L1</button>
+      <button id="btn25" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/JardinAgri.mp4">Explanada Agri</button>
+      <button id="btn26" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/ModuloVentas.mp4">Modulo Ventas</button>
+      <button id="btn27" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Agricola/Estacionamiento.mp4">Estacionamiento</button>
+      <button id="btn28" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/EXUBE.mp4">EXUBE y Comedor</button>
+      <button id="btn29" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Escudo.mp4">Escudo MVZ</button>
+      <button id="btn30" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Escultura.mp4">A3 y A4</button>
+      <button id="btn31" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Corral.mp4">Corrales</button>
+      <button id="btn32" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/MesasA4.mp4">A4 y L7</button>
+      <button id="btn33" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/L6.mp4">L6</button>
+      <button id="btn34" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/CasaBlanca.mp4">Casa Blanca</button>
+      <button id="btn35" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/CADI.mp4">CADI</button>
+      <button id="btn36" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Talleres.mp4">Taller Cultural</button>
+      <button id="btn37" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/TallerEscultura.mp4">Escultura de Metal</button>
+      <button id="btn38" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Ajedrez.mp4">Ajedrez</button>
+      <button id="btn39" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Estacionamiento.mp4">Estacionamiento</button>
+      <button id="btn40" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/Entrada.mp4">Entrada MVZ</button>
+      <button id="btn41" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Veterinaria/EntradaCorral.mp4">Entrada Corral</button>
+      <button id="btn42" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/EntradaHospitales.mp4">Entrada Hospitales</button>
+      <button id="btn43" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/HospitalEquinos.mp4">Hospital Equinos</button>
+      <button id="btn44" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/PequenasEspecies.mp4">Pequeñas Especies</button>
+      <button id="btn45" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ContaAdmin/SalaComputoAdmi.mp4">Sala de Computo</button>
+      <button id="btn46" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/KellerEntrada.mp4">Entrada Keller</button>
+      <button id="btn47" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/KellerAtras.mp4">Monumento</button>
+      <button id="btn48" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/GobiernoDentro.mp4">Gobierno</button>
+      <button id="btn49" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/UIM.mp4">UIM</button>
+      <button id="btn50" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Otros/Bioterio.mp4">Bioterio</button>
+      <button id="btn51" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Informatica/CentroComputo.mp4">Centro de Computo</button>
+      <button id="btn52" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/Biblioteca.mp4">Biblioteca</button>
+      <button id="btn53" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/Servicios.mp4">Servicios Escolares</button>
+      <button id="btn54" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/Servicios2da.mp4">Orientacion</button>
+      <button id="btn55" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Informatica/Gallineros.mp4">Gallineros</button>
+      <button id="btn56" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Informatica/EntradaA13.mp4">Entrada A14</button>
+      <button id="btn57" class="btn btn-purple hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Informatica/A11.mp4">A11 y L9</button>
+      <button id="btn58" class="btn btn-warning hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/Cubiculo.mp4">Cubiculos</button>
+      <button id="btn59" class="btn btn-pink hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/GobiernoEstaciona.mp4">Intersección</button>
+      <button id="btn60" class="btn btn-danger hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/Explanada.mp4">Explanada</button>
+      <button id="btn61" class="btn btn-primary hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/Informatica/Coordinacion.mp4">Coordinacion Info</button>
+      <button id="btn62" class="btn btn-success hotspot-btn" data-bs-toggle="modal" data-bs-target="#videoModal" data-video="./CapturasFESC/ExplanadaPrincipal/KellerDentro.mp4">Auditorio Keller</button>
+    </div>
     <footer>
       <p>&copy; 2025 Creado por Mauricio Muciño Villegas, José Antonio Mancilla Acevedo, Roberto Emilio Robledo Guadalupe, Jairo Jair Moreno Romero. Todos los derechos reservados.</p>
     </footer>
@@ -335,91 +213,33 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
-  const overlay = document.getElementById('overlay');
-  const closeBtn = document.getElementById('closeMenu');
+    function checkOrientation() {
+      if (window.innerHeight > window.innerWidth) {
+        alert("Por favor, gire su dispositivo para verlo en orientación horizontal.");
+        document.getElementById("croquis").style.display = "none";
+        document.getElementById("Gira").style.display = "block";
+      } else {
+        document.getElementById("croquis").style.display = "block";
+        document.getElementById("Gira").style.display = "none";
+      }
+    }
+    window.addEventListener("resize", checkOrientation);
+    window.onload = checkOrientation;
+    const videoModal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
 
-  // Abrir y cerrar menú
-  hamburger.addEventListener('click', () => {
-    navLinks.classList.add('show');
-    overlay.classList.add('active');
-  });
-
-  closeBtn.addEventListener('click', () => {
-    navLinks.classList.remove('show');
-    overlay.classList.remove('active');
-  });
-
-  overlay.addEventListener('click', () => {
-    navLinks.classList.remove('show');
-    overlay.classList.remove('active');
-  });
-
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('show');
-      overlay.classList.remove('active');
+    videoModal.addEventListener('show.bs.modal', function (event) {
+      const button = event.relatedTarget;
+      const videoSrc = button.getAttribute('data-video');
+      modalVideo.querySelector('source').src = videoSrc;
+      modalVideo.load();
+      modalVideo.play();
     });
-  });
 
-  // Configura Panzoom sobre el contenedor completo (imagen + botones)
-  const zoomArea = document.getElementById('zoomArea'); // Asegúrate de agregar este div en el HTML
-  const panzoomInstance = Panzoom(zoomArea, {
-    maxScale: 3,
-    minScale: 1,
-    startScale: 1,
-  });
-
-  // Permite hacer zoom con la rueda del ratón
-  zoomArea.parentElement.addEventListener('wheel', panzoomInstance.zoomWithWheel);
-
-  // Botón para resetear zoom
-  const resetButton = document.getElementById('resetZoom');
-  resetButton.addEventListener('click', () => {
-    panzoomInstance.reset();
-  });
-
-  // Modal de video
-  const videoModal = document.getElementById('videoModal');
-  const modalVideo = document.getElementById('modalVideo');
-
-  videoModal.addEventListener('show.bs.modal', function (event) {
-    const button = event.relatedTarget;
-    const videoSrc = button.getAttribute('data-video');
-    modalVideo.querySelector('source').src = videoSrc;
-    modalVideo.load();
-    modalVideo.play();
-  });
-
-  videoModal.addEventListener('hidden.bs.modal', function () {
-    modalVideo.pause();
-    modalVideo.currentTime = 0;
-  });
-
-  function zoomRelativoSinPan(relX, relY, scale = 2, panXRel = 0, panYRel = 0) {
-    const zoomArea = document.getElementById('zoomArea');
-    const zoomRect = zoomArea.getBoundingClientRect();
-
-    const focalX = zoomRect.width * relX;
-    const focalY = zoomRect.height * relY;
-
-    panzoomInstance.zoom(scale, {
-      focal: { x: focalX, y: focalY },
-      animate: true
+    videoModal.addEventListener('hidden.bs.modal', function () {
+      modalVideo.pause();
+      modalVideo.currentTime = 0;
     });
-    
-    const panX = zoomRect.width * panXRel;
-    const panY = zoomRect.height * panYRel;
-    // Paneo (ajusta estos valores según necesites centrar la zona)
-    panzoomInstance.pan(panX, panY, { animate: true });
-  }
-
-  document.getElementById('ZoomAdm').addEventListener('click', (e) => {
-    e.preventDefault();
-    zoomRelativoSinPan(0.40, 0.50, 3, 0.04, -0.01); // coordenadas relativas de la zona de Administración
-  });
-
-</script>
+  </script>
 </body>
 </html>
