@@ -220,15 +220,14 @@ function actualizarTamañoDeBotones() {
   const escalaActual = panzoomInstance.getScale();
   const escalaVisual = 1 / escalaActual; // inverso para "cancelar" visualmente el zoom
 
-  // Aplica a todos los botones
   document.querySelectorAll('.hotspot-btn').forEach(btn => {
     btn.style.setProperty('--hotspot-scale', escalaVisual);
   });
 }
 
-// Llama esta función cada vez que se haga zoom
-zoomArea.addEventListener('wheel', () => {
-  setTimeout(actualizarTamañoDeBotones, 50);
-});
+// Ejecuta al inicio por si el mapa ya está escalado
+actualizarTamañoDeBotones();
 
-// También llámala después de cualquier botón que use `panzoomInstance.zoom(...)`
+// Se ejecuta cada vez que el usuario hace zoom o pan (en PC o móvil)
+zoomArea.addEventListener('panzoomchange', actualizarTamañoDeBotones);
+
