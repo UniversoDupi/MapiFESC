@@ -221,7 +221,10 @@ function Pip() {
 
 function actualizarTamañoDeBotones() {
   const escalaActual = panzoomInstance.getScale();
-  const escalaVisual = 1 / escalaActual;
+
+  const ajuste = 1.4; // Aumenta para hacer los botones más grandes en el zoom, reduce para hacerlos más pequeños
+
+  const escalaVisual = (1 / escalaActual) * ajuste;
 
   document.querySelectorAll('.hotspot-btn').forEach(btn => {
     btn.style.setProperty('--hotspot-scale', escalaVisual);
@@ -234,6 +237,4 @@ actualizarTamañoDeBotones();
 // Detectar cambios de zoom y pan — ¡funciona en móviles también!
 zoomArea.addEventListener('panzoomzoom', actualizarTamañoDeBotones);
 zoomArea.addEventListener('panzoompan', actualizarTamañoDeBotones);
-
-
 
