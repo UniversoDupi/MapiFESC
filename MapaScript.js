@@ -215,3 +215,20 @@ function Pip() {
     var sound = document.getElementById("SOni");
     sound.play();
 }
+
+function actualizarTamañoDeBotones() {
+  const escalaActual = panzoomInstance.getScale();
+  const escalaVisual = 1 / escalaActual; // inverso para "cancelar" visualmente el zoom
+
+  // Aplica a todos los botones
+  document.querySelectorAll('.hotspot-btn').forEach(btn => {
+    btn.style.setProperty('--hotspot-scale', escalaVisual);
+  });
+}
+
+// Llama esta función cada vez que se haga zoom
+zoomArea.addEventListener('wheel', () => {
+  setTimeout(actualizarTamañoDeBotones, 50);
+});
+
+// También llámala después de cualquier botón que use `panzoomInstance.zoom(...)`
