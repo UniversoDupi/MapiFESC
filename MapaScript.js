@@ -32,11 +32,14 @@ const zoomArea = document.getElementById('zoomArea'); // Asegúrate de agregar e
 const isPortrait = window.matchMedia("(orientation: portrait)").matches;
   // Definir maxScale según orientación
 const maxSca = isPortrait ? 6 : 3;
+
 const panzoomInstance = Panzoom(zoomArea, {
-    maxScale: maxSca,
-    minScale: 1,
-    startScale: 1,
-  });
+  maxScale: maxSca,
+  minScale: 1,
+  startScale: 1,
+  animate: true
+});
+
   // Ajustar maxScale dinámicamente al rotar pantalla
 window.addEventListener("orientationchange", () => {
     setTimeout(() => {
@@ -218,16 +221,19 @@ function Pip() {
 
 function actualizarTamañoDeBotones() {
   const escalaActual = panzoomInstance.getScale();
-  const escalaVisual = 1 / escalaActual; // inverso para "cancelar" visualmente el zoom
+  const escalaVisual = 1 / escalaActual;
 
   document.querySelectorAll('.hotspot-btn').forEach(btn => {
     btn.style.setProperty('--hotspot-scale', escalaVisual);
   });
 }
 
-// Ejecuta al inicio por si el mapa ya está escalado
+// Ejecutar al cargar
 actualizarTamañoDeBotones();
 
-// Se ejecuta cada vez que el usuario hace zoom o pan (en PC o móvil)
-zoomArea.addEventListener('panzoomchange', actualizarTamañoDeBotones);
+// Detectar cambios de zoom y pan — ¡funciona en móviles también!
+zoomArea.addEventListener('panzoomzoom', actualizarTamañoDeBotones);
+zoomArea.addEventListener('panzoompan', actualizarTamañoDeBotones);
+
+
 
