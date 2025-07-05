@@ -181,15 +181,49 @@ p {
     background-image: linear-gradient(to right, #ac0000, #300000);
   }
 
+  #zoomArea {
+    font-size: 14px; /* base */
+  }
+
+  .hotspot-btn {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    transform: translate(-50%, -50%) scale(var(--hotspot-scale));
+    transform-origin: center;
+    z-index: 10;
+    pointer-events: auto;
+  }
+  
+  /* Estilo del texto emergente */
+  .hotspot-btn::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 125%; /* por encima del punto */
+    left: 50%;
+    transform: translateX(-50%);
+    background: black;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+    transition: opacity 0.2s ease;
+  }
+  
+  /* Mostrar el texto al pasar el mouse */
+  .hotspot-btn:hover::after,
+  .hotspot-btn:focus::after {
+    opacity: 1;
+  }
+  
     /* Responsividad para orientación vertical */
   @media (orientation: portrait) {
-    .hotspot-btn {
-      position: absolute;
-      transform: translate(-50%, -50%);
-      padding: .15px .15px;
-      font-size: 1.5px;
-    }
-
     .Mapi-img {
       position: absolute;
       top: 0vh;
@@ -229,79 +263,73 @@ p {
       display: block;
     }
 
-    #btn1 { bottom: 16%; left: 35%; }
-    #btn2 { bottom: 26%; left: 40%; }
-    #btn3 { bottom: 36.5%; left: 39%; }
-    #btn4 { bottom: 34.5%; left: 41%; }
-    #btn5 { bottom: 40%; left: 40%; }
-    #btn6 { bottom: 41%; left: 47%; }
-    #btn7 { bottom: 43.5%; left: 46%; }
-    #btn8 { bottom: 50%; left: 46%; }
-    #btn9 { bottom: 55%; left: 47%; }
-    #btn10 { bottom: 63%; left: 46.5%; }
-    #btn11 { bottom: 60%; left: 49%; }
-    #btn12 { bottom: 66.5%; left: 46.5%; }
-    #btn13 { bottom: 67%; left: 43%; }
-    #btn14 { bottom: 74%; left: 42.5%; }
-    #btn15 { bottom: 65%; left: 38%; }
-    #btn16 { bottom: 70%; left: 38%; }
-    #btn17 { bottom: 63%; left: 32.5%; }
-    #btn18 { bottom: 67%; left: 32.5%; }
-    #btn19 { bottom: 71%; left: 47.7%; }
-    #btn20 { bottom: 71%; left: 59%; }
-    #btn21 { bottom: 65%; left: 59%; }
-    #btn22 { bottom: 49%; left: 60.5%; }
-    #btn23 { bottom: 51%; left: 60.5%; }
-    #btn24 { bottom: 48%; left: 64%; }
-    #btn25 { bottom: 49.5%; left: 67%; }
-    #btn26 { bottom: 43%; left: 65%; }
-    #btn27 { bottom: 40%; left: 60%; }
-    #btn28 { bottom: 59%; left: 71%; }
-    #btn29 { bottom: 59.5%; left: 78%; }
-    #btn30 { bottom: 70.5%; left: 80%; }
-    #btn31 { bottom: 78%; left: 93%; }
-    #btn32 { bottom: 79%; left: 81%; }
-    #btn33 { bottom: 72%; left: 84%; }
-    #btn34 { bottom: 52%; left: 78%; }
-    #btn35 { bottom: 52%; left: 85%; }
-    #btn36 { bottom: 44%; left: 85%; }
-    #btn37 { bottom: 48%; left: 85%; }
-    #btn38 { bottom: 51%; left: 81%; }
-    #btn39 { bottom: 49.5%; left: 77%; }
-    #btn40 { bottom: 44%; left: 77%; }
-    #btn41 { bottom: 82%; left: 88%; }
-    #btn42 { bottom: 60%; left: 27%; }
-    #btn43 { bottom: 68%; left: 22%; }
-    #btn44 { bottom: 59%; left: 22%; }
-    #btn45 { bottom: 41%; left: 43.5%; }
-    #btn46 { bottom: 38.5%; left: 49%; }
-    #btn47 { bottom: 32.5%; left: 46%; }
-    #btn48 { bottom: 47%; left: 53.5%; }
-    #btn49 { bottom: 42%; left: 25%; }
-    #btn50 { bottom: 49%; left: 27%; }
-    #btn51 { bottom: 58%; left: 36%; }
-    #btn52 { bottom: 52.5%; left: 54%; }
-    #btn53 { bottom: 58%; left: 54.5%; }
-    #btn54 { bottom: 56%; left: 50%; }
-    #btn55 { bottom: 57%; left: 40%; }
-    #btn56 { bottom: 57%; left: 32.3%; }
-    #btn57 { bottom: 53.5%; left: 44%; }
-    #btn58 { bottom: 45%; left: 49%; }
-    #btn59 { bottom: 41.5%; left: 50%; }
-    #btn60 { bottom: 52%; left: 51%; }
-    #btn61 { bottom: 50.5%; left: 32.1%; }
-    #btn62 { bottom: 36%; left: 47%; }
+    #btn1 { bottom: 12.5%; left: 35%; }
+    #btn2 { bottom: 22.5%; left: 40%; }
+    #btn3 { bottom: 33%; left: 39%; }
+    #btn4 { bottom: 31%; left: 41%; }
+    #btn5 { bottom: 36.5%; left: 40%; }
+    #btn6 { bottom: 37.5%; left: 47%; }
+    #btn7 { bottom: 40%; left: 46%; }
+    #btn8 { bottom: 46.5%; left: 46%; }
+    #btn9 { bottom: 52.5%; left: 47%; }
+    #btn10 { bottom: 59.5%; left: 46.5%; }
+    #btn11 { bottom: 56.5%; left: 49%; }
+    #btn12 { bottom: 63%; left: 46.5%; }
+    #btn13 { bottom: 63.5%; left: 43%; }
+    #btn14 { bottom: 70.5%; left: 42.5%; }
+    #btn15 { bottom: 61.5%; left: 38%; }
+    #btn16 { bottom: 66.5%; left: 38%; }
+    #btn17 { bottom: 59.5%; left: 32.5%; }
+    #btn18 { bottom: 63.5%; left: 32.5%; }
+    #btn19 { bottom: 67.5%; left: 47.7%; }
+    #btn20 { bottom: 67.5%; left: 59%; }
+    #btn21 { bottom: 61.5%; left: 59%; }
+    #btn22 { bottom: 45.5%; left: 60.5%; }
+    #btn23 { bottom: 47.5%; left: 60.5%; }
+    #btn24 { bottom: 44.5%; left: 64%; }
+    #btn25 { bottom: 46%; left: 67%; }
+    #btn26 { bottom: 39.5%; left: 65%; }
+    #btn27 { bottom: 36.5%; left: 60%; }
+    #btn28 { bottom: 55.5%; left: 71%; }
+    #btn29 { bottom: 56%; left: 78%; }
+    #btn30 { bottom: 67%; left: 80%; }
+    #btn31 { bottom: 74.5%; left: 93%; }
+    #btn32 { bottom: 75.5%; left: 81%; }
+    #btn33 { bottom: 68.5%; left: 84%; }
+    #btn34 { bottom: 48.5%; left: 78%; }
+    #btn35 { bottom: 48.5%; left: 85%; }
+    #btn36 { bottom: 40.5%; left: 85%; }
+    #btn37 { bottom: 44.5%; left: 85%; }
+    #btn38 { bottom: 45.5%; left: 81%; }
+    #btn39 { bottom: 46%; left: 77%; }
+    #btn40 { bottom: 40.5%; left: 77%; }
+    #btn41 { bottom: 78.5%; left: 88%; }
+    #btn42 { bottom: 56.5%; left: 27%; }
+    #btn43 { bottom: 64.5%; left: 22%; }
+    #btn44 { bottom: 55.5%; left: 22%; }
+    #btn45 { bottom: 37.5%; left: 43.5%; }
+    #btn46 { bottom: 35%; left: 49%; }
+    #btn47 { bottom: 29%; left: 46%; }
+    #btn48 { bottom: 43.5%; left: 53.5%; }
+    #btn49 { bottom: 38.5%; left: 25%; }
+    #btn50 { bottom: 45.5%; left: 27%; }
+    #btn51 { bottom: 54.5%; left: 36%; }
+    #btn52 { bottom: 49%; left: 54%; }
+    #btn53 { bottom: 52.5%; left: 54.5%; }
+    #btn54 { bottom: 50.5%; left: 50%; }
+    #btn55 { bottom: 53.5%; left: 40%; }
+    #btn56 { bottom: 53.5%; left: 32.3%; }
+    #btn57 { bottom: 50%; left: 44%; }
+    #btn58 { bottom: 41.5%; left: 49%; }
+    #btn59 { bottom: 38%; left: 50%; }
+    #btn60 { bottom: 48.5%; left: 51%; }
+    #btn61 { bottom: 47%; left: 32.1%; }
+    #btn62 { bottom: 32.5%; left: 47%; }
+
   }
 
   /* Responsividad para orientación horizontal */
 @media (orientation: landscape) {
-    .hotspot-btn {
-      position: absolute;
-      transform: translate(-50%, -50%);
-      padding: .5px .5px;
-      font-size: 2px;
-    }
-
     .Mapi-img {
       position: absolute;
       top: 0vh;
