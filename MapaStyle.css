@@ -221,38 +221,6 @@ p {
   .hotspot-btn:focus::after {
     opacity: 1;
   }
-
-  .scroll-container::-webkit-scrollbar {
-    width: 50%; /* 🔁 Cambia este valor para controlar el grosor */
-  }
-  
-  .scroll-container::-webkit-scrollbar-track {
-    background: #f0f0f0;
-  }
-  
-  .scroll-container::-webkit-scrollbar-thumb {
-    background-color: #999;
-    border-radius: 60%;
-    border: 4% solid transparent; /* espacio interior visual */
-    background-clip: content-box;
-  }
-  
-  /* Firefox */
-  .scroll-container {
-    scrollbar-width: thin;        /* opciones: auto, thin */
-    scrollbar-color: #999 #f0f0f0;
-    max-height: 90vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    direction: rtl;
-    padding-left: 16px;       /* crea espacio a la izquierda */
-    background-clip: content-box;
-  }
-  
-  .scroll-container > * {
-    direction: ltr;           /* Volvemos a normal el contenido interno */
-  }
-  
     /* Responsividad para orientación vertical */
   @media (orientation: portrait) {
     .Mapi-img {
