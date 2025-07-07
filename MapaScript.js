@@ -27,7 +27,7 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 
   // Configura Panzoom sobre el contenedor completo (imagen + botones)
-const zoomArea = document.getElementById('zoomArea'); // Asegúrate de agregar este div en el HTML
+const zoomArea = document.getElementById('zoomArea');
   // Detectar orientación: true = vertical, false = horizontal
 const isPortrait = window.matchMedia("(orientation: portrait)").matches;
   // Definir maxScale según orientación
@@ -219,6 +219,53 @@ function Pip() {
     sound.play();
 }
 
+const tooltip = document.getElementById('tooltipLabel');
+let tooltipTimeout;
+
+document.querySelectorAll('.hotspot-btn').forEach(btn => {
+  // Al pasar el mouse
+  btn.addEventListener('mouseenter', () => {
+    mostrarTooltip(btn);
+  });
+
+  // Al quitar el mouse
+  btn.addEventListener('mouseleave', () => {
+    if (!tooltip.classList.contains('fijado')) {
+      ocultarTooltip();
+    }
+  });
+
+  // Al hacer click
+  btn.addEventListener('click', () => {
+    mostrarTooltip(btn, true); // mostrar y fijar
+  });
+});
+
+function mostrarTooltip(btn, fijar = false) {
+  const label = btn.getAttribute('data-label');
+  const btnX = btn.offsetLeft + btn.offsetWidth / 20;
+  const btnY = btn.offsetTop;
+
+  tooltip.textContent = label;
+  tooltip.style.left = btnX + 'px';
+  tooltip.style.top = btnY + 'px';
+  tooltip.style.opacity = 1;
+
+  // Si es click, se fija el tooltip temporalmente
+  if (fijar) {
+    tooltip.classList.add('fijado');
+    clearTimeout(tooltipTimeout);
+    tooltipTimeout = setTimeout(() => {
+      tooltip.classList.remove('fijado');
+      tooltip.style.opacity = 0;
+    }, 3000); // tiempo en milisegundos
+  }
+}
+
+function ocultarTooltip() {
+  tooltip.style.opacity = 0;
+}
+
 function actualizarTamañoDeBotones() {
   const escalaActual = panzoomInstance.getScale();
 
@@ -229,12 +276,27 @@ function actualizarTamañoDeBotones() {
   document.querySelectorAll('.hotspot-btn').forEach(btn => {
     btn.style.setProperty('--hotspot-scale', escalaVisual);
   });
+  tooltip.style.setProperty('--hotspot-scale', escalaVisual);
 }
 
 // Ejecutar al cargar
 actualizarTamañoDeBotones();
 
-// Detectar cambios de zoom y pan — ¡funciona en móviles también!
+// Detectar cambios de zoom y pan
 zoomArea.addEventListener('panzoomzoom', actualizarTamañoDeBotones);
 zoomArea.addEventListener('panzoompan', actualizarTamañoDeBotones);
+
+const modalTitle = document.querySelector('#videoModal .modal-title');
+document.querySelectorAll('.hotspot-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    const label = btn.getAttribute('data-label');
+    
+    // Actualizar título del modal
+    modalTitle.textContent = 'Zona seleccionada: ' + label;
+
+    tooltip.textContent = label;
+  });
+});
+
+
 
