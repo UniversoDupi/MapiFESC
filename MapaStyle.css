@@ -87,7 +87,7 @@ p {
     left: 0; 
     width: 220px;
     height: 100vh;
-    overflow-y: auto; /* ¡permite desplazamiento vertical! */
+    overflow-y: auto; /*desplazamiento vertical*/
     overscroll-behavior: contain; /* evita efectos feos en móviles */
     -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
     background-color: #333;
@@ -182,7 +182,7 @@ p {
   }
 
   #zoomArea {
-    font-size: 14px; /* base */
+    font-size: 14px;
   }
 
   .hotspot-btn {
@@ -196,31 +196,23 @@ p {
     z-index: 10;
     pointer-events: auto;
   }
-  
-  /* Estilo del texto emergente */
-  .hotspot-btn::after {
-    content: attr(data-label);
+
+  .tooltip-label {
     position: absolute;
-    bottom: 125%; /* por encima del punto */
-    left: 50%;
-    transform: translateX(-50%);
     background: black;
     color: white;
     font-size: 10px;
     padding: 2px 6px;
     border-radius: 4px;
     white-space: nowrap;
-    opacity: 0;
     pointer-events: none;
-    z-index: 10;
-    transition: opacity 0.2s ease;
-  }
+    opacity: 0;
+    z-index: 9999;
+    transition: opacity 0.3s ease;
+    transform: translate(-50%, -80%) scale(var(--hotspot-scale));
+    transform-origin: center;
+  }  
   
-  /* Mostrar el texto al pasar el mouse */
-  .hotspot-btn:hover::after,
-  .hotspot-btn:focus::after {
-    opacity: 1;
-  }
     /* Responsividad para orientación vertical */
   @media (orientation: portrait) {
     .Mapi-img {
