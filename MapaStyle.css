@@ -30,6 +30,26 @@
     background-color: #5a3791;
   }
 
+.btn-marin {
+    background-color: #4275c1;
+    color: white;
+    border-color: #2134a0;
+  }
+
+.btn-marin:hover {
+    background-color: #02006b;
+  }
+
+.btn-cyan {
+    background-color: #42bdc1;
+    color: white;
+    border-color: #218da0;
+  }
+
+.btn-cyan:hover {
+    background-color: #005f6b;
+  }
+
 .btn-pink {
     background-color: #dd3999;
     color: white;
@@ -60,6 +80,36 @@
     background-color: #8f003c;
   }
 
+.btn-amar {
+    background-color: #ffd900;
+    color: white;
+    border-color: #b19600;
+  }
+
+.btn-amar:hover {
+    background-color: #665c00;
+  }
+
+.btn-bande {
+    background-color: #1eff00;
+    color: white;
+    border-color: #0fb100;
+  }
+
+.btn-bande:hover {
+    background-color: #006600;
+  }
+
+.btn-rojo {
+    background-color: #ff0000;
+    color: white;
+    border-color: #b10000;
+  }
+
+.btn-rojo:hover {
+    background-color: #660000;
+  }
+
 p {
     color: white;
   }
@@ -87,7 +137,7 @@ p {
     left: 0; 
     width: 220px;
     height: 100vh;
-    overflow-y: auto; /*desplazamiento vertical*/
+    overflow-y: auto; /* ¡permite desplazamiento vertical! */
     overscroll-behavior: contain; /* evita efectos feos en móviles */
     -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
     background-color: #333;
@@ -182,7 +232,7 @@ p {
   }
 
   #zoomArea {
-    font-size: 14px;
+    font-size: 14px; /* base */
   }
 
   .hotspot-btn {
@@ -262,7 +312,7 @@ p {
     #btn6 { bottom: 37.5%; left: 47%; }
     #btn7 { bottom: 40%; left: 46%; }
     #btn8 { bottom: 46.5%; left: 46%; }
-    #btn9 { bottom: 52.5%; left: 47%; }
+    #btn9 { bottom: 51.5%; left: 46.7%; }
     #btn10 { bottom: 59.5%; left: 46.5%; }
     #btn11 { bottom: 56.5%; left: 49%; }
     #btn12 { bottom: 63%; left: 46.5%; }
@@ -368,7 +418,7 @@ p {
     #btn6 { bottom: 42%; left: 47%; }
     #btn7 { bottom: 44.5%; left: 46%; }
     #btn8 { bottom: 51%; left: 46%; }
-    #btn9 { bottom: 56%; left: 47%; }
+    #btn9 { bottom: 55.2%; left: 46.7%; }
     #btn10 { bottom: 64%; left: 46.5%; }
     #btn11 { bottom: 61%; left: 49%; }
     #btn12 { bottom: 67.5%; left: 46.5%; }
