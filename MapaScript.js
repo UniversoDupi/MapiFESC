@@ -67,6 +67,9 @@ zoomArea.parentElement.addEventListener('wheel', panzoomInstance.zoomWithWheel);
 const resetButton = document.getElementById('resetZoom');
   resetButton.addEventListener('click', () => {
     panzoomInstance.reset();
+    setTimeout(() => {
+      actualizarTamañoDeBotones();
+    }, 300);
   });
 
   // Modal de video
@@ -89,23 +92,21 @@ videoModal.addEventListener('hidden.bs.modal', function () {
 function zoomRelativoSinPan(relX, relY, scale = 2, panXRel = 0, panYRel = 0) {
     const zoomArea = document.getElementById('zoomArea');
 
-  // Paso 1: reset visual animado
+  // reset visual animado
     panzoomInstance.reset({ animate: true });
 
-  // Paso 2: esperar unos milisegundos reales (no solo un frame)
     setTimeout(() => {
       const zoomRect = zoomArea.getBoundingClientRect();
 
       const focalX = zoomRect.width * relX;
       const focalY = zoomRect.height * relY;
 
-    // Paso 3: aplicar el zoom limpio
       panzoomInstance.zoom(scale, {
         focal: { x: focalX, y: focalY },
         animate: true
       });
 
-    // Paso 4: aplicar paneo si se necesita
+    // aplicar paneo si se necesita
       const panX = zoomRect.width * panXRel;
       const panY = zoomRect.height * panYRel;
       panzoomInstance.pan(panX, panY, { animate: true });
@@ -223,19 +224,19 @@ const tooltip = document.getElementById('tooltipLabel');
 let tooltipTimeout;
 
 document.querySelectorAll('.hotspot-btn').forEach(btn => {
-  // Al pasar el mouse
+  // Al pasar el mouse (hover)
   btn.addEventListener('mouseenter', () => {
     mostrarTooltip(btn);
   });
 
-  // Al quitar el mouse
+  // Al quitar el mouse (pero solo si no hiciste clic)
   btn.addEventListener('mouseleave', () => {
     if (!tooltip.classList.contains('fijado')) {
       ocultarTooltip();
     }
   });
 
-  // Al hacer click
+  // Al hacer clic
   btn.addEventListener('click', () => {
     mostrarTooltip(btn, true); // mostrar y fijar
   });
@@ -251,7 +252,7 @@ function mostrarTooltip(btn, fijar = false) {
   tooltip.style.top = btnY + 'px';
   tooltip.style.opacity = 1;
 
-  // Si es click, se fija el tooltip temporalmente
+  // Si es clic, fijamos el tooltip temporalmente
   if (fijar) {
     tooltip.classList.add('fijado');
     clearTimeout(tooltipTimeout);
@@ -279,7 +280,6 @@ function actualizarTamañoDeBotones() {
   tooltip.style.setProperty('--hotspot-scale', escalaVisual);
 }
 
-// Ejecutar al cargar
 actualizarTamañoDeBotones();
 
 // Detectar cambios de zoom y pan
