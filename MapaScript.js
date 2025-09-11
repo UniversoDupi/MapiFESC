@@ -1,4 +1,3 @@
-//Quien te crees? Pensaste que podrias leer el codigo?
 const _0xdba18c = _0x2e97;
 (function (_0x53f5d4, _0x407b96) {
     const _0x59514b = _0x2e97, _0x556bbd = _0x53f5d4();
