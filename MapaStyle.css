@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.288); /* Oscurecimiento elegante */
+    background-color: rgba(0, 0, 0, 0.287); /* Oscurecimiento elegante */
     z-index: 5;
     display: none;
   }
