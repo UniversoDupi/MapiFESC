@@ -252,35 +252,14 @@ p {
     position: absolute;
     width: 15px;
     height: 15px;
-  
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  
-    color: #111;
-    cursor: pointer;
-
-    /*Entre más px, más circular, entre menos px, más ovalado será el botón*/
-    box-shadow: 0 6px 6px rgba(0,0,0,.5);
-    border: 2px solid rgba(255,255,255,.85);
-  
+    border: none;
+    transform: translate(-50%, -50%) scale(var(--hotspot-scale));
     transform-origin: center;
     z-index: 10;
-
-    transition:
-      box-shadow .12s ease,
-      filter .12s ease;
-  }
-  
-  .hotspot-btn.pulse {
-    animation: pulse 1.5s infinite ease-in-out;
-  }
-
-  @keyframes pulse {
-    0%   { --hotspot-scale: 1; }
-    50%  { --hotspot-scale: 1.25; }
-    100% { --hotspot-scale: 1; }
+    pointer-events: auto;
+    box-shadow: 0 6px 6px rgba(0,0,0,.5);
+    border: 2px solid rgba(255,255,255,.85);
   }
 
   .tooltip-label {
