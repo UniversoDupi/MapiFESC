@@ -4,12 +4,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.288); /* Oscurecimiento elegante */
+    background-color: rgba(0, 0, 0, 0.30); /* Oscurecimiento elegante */
     z-index: 5;
     display: none;
   }
 
-  .texto {
+.texto {
     color: white;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 25px;
@@ -149,10 +149,10 @@ p {
     left: 0; 
     width: 220px;
     height: 100vh;
-    overflow-y: auto; /* ¡permite desplazamiento vertical! */
-    overscroll-behavior: contain; /* evita efectos feos en móviles */
-    -webkit-overflow-scrolling: touch; /* scroll suave en iOS */
-    background-color: rgb(200,200,200);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    background-color: rgba(0, 0, 0, 0.9);
 
     transform: translateX(-100%); 
     transition: transform 0.3s ease-in-out;
@@ -181,67 +181,68 @@ p {
   }
 
 .azul {
-    background-image: linear-gradient(to right, #4b6cff, #19237a);
+    background-color: rgba(47, 72, 185, 0.9);
   }
-.azul:hover{
-    background-image: linear-gradient(to right, #2c3f96, #0e1341);
+.azul:hover {
+    background-color: rgba(30, 41, 136, 0.9);
   }
-
+  
 .cyan {
-    background-image: linear-gradient(to right, #00cad8, #053b3d);
+    background-color: rgba(21, 166, 177, 0.9);
   }
-.cyan:hover{
-    background-image: linear-gradient(to right, #0fa59e, #002b2b);
+.cyan:hover {
+    background-color: rgba(16, 121, 115, 0.9);
   }
-
+  
 .cafe {
-    background-image: linear-gradient(to right, #ff8827, #6d4307);
+    background-color: rgba(255, 136, 39, 0.9);
   }
-.cafe:hover{
-    background-image: linear-gradient(to right, #ad6500, #301f00);
+.cafe:hover {
+    background-color: rgba(185, 118, 24, 0.9);
   }
-
+  
 .rosa {
-    background-image: linear-gradient(to right, #ff79c7, #910071);
+    background-color: rgba(255, 121, 199, 0.9);
   }
-.rosa:hover{
-    background-image: linear-gradient(to right, #880071, #3b0025);
+.rosa:hover {
+    background-color: rgba(172, 79, 156, 0.9);
   }
-
+  
 .verde {
-    background-image: linear-gradient(to right, #69ff4b, #217a19);
+    background-color: rgba(56, 207, 26, 0.9);
   }
-.verde:hover{
-    background-image: linear-gradient(to right, #2c962c, #12410e);
+.verde:hover {
+    background-color: rgba(16, 146, 16, 0.9);
   }
-
+  
 .morado {
-    background-image: linear-gradient(to right, #cc4bff, #5e197a);
+    background-color: rgba(204, 75, 255, 0.9);
   }
-.morado:hover{
-    background-image: linear-gradient(to right, #7d2c96, #330e41);
+.morado:hover {
+    background-color: rgba(159, 50, 192, 0.9);
   }
-
+  
 .verdecl {
-    background-image: linear-gradient(to right, #ff3288, #99001a);
+    background-color: rgba(255, 50, 136, 0.9);
   }
-.verdecl:hover{
-    background-image: linear-gradient(to right, #ce0924, #2b0009);
+.verdecl:hover {
+    background-color: rgba(187, 37, 99, 0.9);
   }
-
+  
 .amarillo {
-    background-image: linear-gradient(to right, #d8ca00, #797100);
+    background-color: rgba(209, 196, 17, 0.9);
   }
-.amarillo:hover{
-    background-image: linear-gradient(to right, #b19913, #343500);
+.amarillo:hover {
+    background-color: rgba(163, 141, 16, 0.9);
   }
-
+  
 .fresita {
-    background-image: linear-gradient(to right, #ff0000, #7c0000);
+    background-color: rgba(255, 0, 0, 0.9);
   }
-.fresita:hover{
-    background-image: linear-gradient(to right, #ac0000, #300000);
+.fresita:hover {
+    background-color: rgba(172, 0, 0, 0.9);
   }
+  
 
   #zoomArea {
     font-size: 14px; /* base */
